@@ -9,10 +9,11 @@
 										 $ci->twilio_token,
 										 $ci->twilio_endpoint);
 	
+	$last = end($ci->uri->segments);
 	
-	if ($ci->uri->segment(3) != null)
+	if ($last != null)
 	{
-		$page = $ci->uri->segment(3);
+		$page = $last;
 	}
 	else
 	{
@@ -91,13 +92,13 @@
 
 <div class="log_pagination" style="float: right;">
 
-	<?php if($ci->uri->segment(3) != "0" AND $ci->uri->segment(3) != ""):?>
-	<a href="<?php echo base_url();?>p/call_log/<?php echo ($ci->uri->segment(3) - 1);?>">Previous</a>
+	<?php if($last != "0" AND $last != ""):?>
+	<a href="<?php echo base_url();?>p/call_log/<?php echo ($last - 1);?>">Previous</a>
 	<?php endif?>
 	
 
-	<?php if($log_xml->Calls['numpages']-1 > $ci->uri->segment(3)):?>
-	<a href="<?php echo base_url();?>p/call_log/<?php echo ($ci->uri->segment(3) + 1);?>">Next</a>
+	<?php if($log_xml->Calls['numpages']-1 > $last):?>
+	<a href="<?php echo base_url();?>p/call_log/<?php echo ($last + 1);?>">Next</a>
 	<?php endif?>
 	
 </div>
