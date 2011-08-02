@@ -59,7 +59,6 @@
 
 <div class="vbx-plugin">
 <script type="text/javascript" src=" https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
-<script type="text/javascript" src="http://static.twilio.com/libs/twiliojs/1.0/twilio.js"></script>
 <script type="text/javascript">
 	
 	function new_item(call)
